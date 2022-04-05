@@ -9,6 +9,8 @@ type TupleSplit<
   : [O, T];
 
 type Test = TupleSplit<readonly ["a", "b", "c", "d", "e"], 3>;
+
+type Test2 = TupleSplit<readonly ["a", "b", "c", "d", "e"], 3>;
 // type Test = [readonly ["a", "b", "c"], readonly ["d", "e"]]
 
 type TakeFirst<T extends readonly any[], N extends number> = TupleSplit<

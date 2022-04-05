@@ -26,3 +26,29 @@ class Car extends Vehicle {
 
 const car = new Car(4, "red");
 car.startDrivingProcess();
+
+class Department {
+  name: string;
+  employees: string[] = ["Max", "Anna"];
+
+  constructor(n: string) {
+    this.name = n;
+  }
+
+  describe(this: Department) {
+    console.log("Department: " + this.name);
+  }
+
+  addEmployee(employee: string) {
+    this.employees.push(employee);
+  }
+  printEmployeeInformation() {
+    console.log(this.employees.length, "length");
+    console.log(this.employees, "employees");
+  }
+}
+
+const accounting = new Department("Accounting");
+
+accounting.addEmployee("Max");
+accounting.printEmployeeInformation();
